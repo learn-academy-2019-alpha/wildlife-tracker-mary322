@@ -1,0 +1,26 @@
+<h2><%= @animal.name %>
+<%= @animal.latin_name %>
+<%= @animal.kingdom %>
+</h2>
+
+
+<%=link_to "Report Sighting", new_sighting_path(animal_id: @animal.id) %>
+
+
+
+
+
+
+<h3>Reported Sightings:</h3>
+<ul>
+ <% @animal.sightings.each do |sighting| %>
+ <li>Date: <%=sighting.date%></br>
+ Time: <%=sighting.latitude%></br>
+ Latitude: <%=sighting.latitude%></br>
+ Longitude: <%=sighting.longitude%></li>
+ <%=link_to "Edit Sighting", edit_sighting_path(sighting) %>
+ </br>
+ </br>
+<%end%>
+    
+</ul>

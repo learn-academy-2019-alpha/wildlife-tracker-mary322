@@ -1,0 +1,26 @@
+<h1>Edit Page</h1>
+
+
+
+<%= form_for @animal do |f| %>
+    <%= f.label 'animal name' %>
+    <%= f.text_field :name %></br>
+    
+    <%= f.label :latin_name %>
+    <%= f.text_field :latin_name %></br>
+    
+    <%= f.label :kingdom %>
+    <%= f.text_field :kingdom %></br>
+    <%= f.submit %>
+    
+    <%if @errors%>
+ <% @errors.each do|msg| %>
+ <p><%=msg%></p>
+<%end%>
+<%end%>
+
+<%end%>
+
+
+
+
